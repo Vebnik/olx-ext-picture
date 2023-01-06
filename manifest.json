@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Olx picture saver",
+  "description": "For simple save olx borad-market picture",
+  "version": "0.0.1",
+  "icons": {"128": "./media/iconsDefault.png"},
+  "background": {
+    "persistent": true,
+    "scripts": ["./src/bg.js"]
+  },
+  "browser_action": {
+    "default_icon": "./media/iconsDefault.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "./src/content.js"
+      ],
+      "matches": [
+        "*://www.olx.ua/d/uk/obyavlenie/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "*://www.olx.ua/*",
+    "cookies",
+    "tabs",
+    "activeTab",
+    "storage",
+    "notifications"
+  ]
+}
